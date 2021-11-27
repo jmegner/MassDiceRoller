@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ResultTable from './components/ResultTable';
+import PipDisplay from './components/PipDisplay';
 import { MersenneTwister19937, Random } from 'random-js';
 import * as _ from 'lodash';
 
@@ -72,6 +73,22 @@ export default function App() {
     setRolledDiceCounts(newRolledDiceCounts);
   };
 
+  let pipDisplays = _.range(1, 6 + 1).map(pipId => <PipDisplay
+    pip={pipId}
+    count={rolledDiceCounts.get(pipId) ?? 0}
+    wantReroll={pipsToReroll.has(pipId)}
+    pipsToRerollChangeHandler={handlePipsToRerollChange}
+    />
+    );
+
+
+  let pipGrid = [];
+  for(let row = 0; row < 2; row++) {
+    for(let col = 0; col < 3; col++) {
+
+    }
+  }
+
   return (
     <Container className="p-3">
       <h1 className="header">
@@ -80,7 +97,7 @@ export default function App() {
       <Row>
         <Col>
           <input placeholder="Dice Quantity" value={diceQuantity} onChange={handleDiceQuantityChange} />
-          <Button className="m-2" onClick={handleRollClick}>Roll</Button>
+          <Button className="m-2" style={{width: '200px'}} onClick={handleRollClick}>Roll</Button>
         </Col>
       </Row>
       <Row>
@@ -113,8 +130,11 @@ export default function App() {
             />
         </Col>
       </Row>
+      <Row>{pipDisplays}</Row>
       <Row>
-        <Button className="m-2" onClick={handleRerollClick}>Reroll</Button>
+        <Col style={{textAlign: 'center'}}>
+          <Button className="m-2" style={{width: '200px'}} onClick={handleRerollClick}>Reroll</Button>
+        </Col>
       </Row>
       <Row>
         <a href="https://github.com/KatyAHG/MassDiceRoller">GitHub repo</a>
