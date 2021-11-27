@@ -3,7 +3,7 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 interface Props {
-    isExactResult: boolean;
+    isExactResult?: boolean;
     displayMin: number;
     displayMax: number;
     diceCounts: Map<number,number>

@@ -85,10 +85,10 @@ export default function App() {
       </Row>
       <Row>
         <Col>
-          <ResultTable isExactResult={false} displayMin={1} displayMax={3} diceCounts={rolledDiceCounts} />
+          <ResultTable displayMin={1} displayMax={3} diceCounts={rolledDiceCounts} />
         </Col>
         <Col>
-          <ResultTable isExactResult={false} displayMin={4} displayMax={6} diceCounts={rolledDiceCounts} />
+          <ResultTable displayMin={4} displayMax={6} diceCounts={rolledDiceCounts} />
         </Col>
       </Row>
       <Row>
