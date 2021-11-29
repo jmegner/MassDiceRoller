@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ResultTable from './components/ResultTable';
-import PipDisplay from './components/PipDisplay';
+import PipDisplays from './components/PipDisplays';
 import { MersenneTwister19937, Random } from 'random-js';
 import * as _ from 'lodash';
 
@@ -73,31 +73,17 @@ export default function App() {
     setRolledDiceCounts(newRolledDiceCounts);
   };
 
-  let pipDisplays = _.range(1, 6 + 1).map(pipId => <PipDisplay
-    pip={pipId}
-    count={rolledDiceCounts.get(pipId) ?? 0}
-    wantReroll={pipsToReroll.has(pipId)}
-    pipsToRerollChangeHandler={handlePipsToRerollChange}
-    />
-    );
-
-
-  let pipGrid = [];
-  for(let row = 0; row < 2; row++) {
-    for(let col = 0; col < 3; col++) {
-
-    }
-  }
-
   return (
-    <Container className="p-3">
-      <h1 className="header">
-        MassDiceRoller
-      </h1>
+    <Container className="p-3" style={{width: '450px'}}>
       <Row>
-        <Col>
-          <input placeholder="Dice Quantity" value={diceQuantity} onChange={handleDiceQuantityChange} />
-          <Button className="m-2" style={{width: '200px'}} onClick={handleRollClick}>Roll</Button>
+        <Col className='d-flex justify-content-center'>
+          <h1 className="header">MassDiceRoller</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col className='d-flex justify-content-center align-items-center'>
+          <input placeholder="Dice Quantity" value={diceQuantity} onChange={handleDiceQuantityChange} style={{width: '60px'}} />
+          <Button className="m-2" style={{width: '160px'}} onClick={handleRollClick}>Roll</Button>
         </Col>
       </Row>
       <Row>
@@ -108,35 +94,24 @@ export default function App() {
           <ResultTable displayMin={4} displayMax={6} diceCounts={rolledDiceCounts} />
         </Col>
       </Row>
+      <PipDisplays
+        rolledDiceCounts={rolledDiceCounts}
+        pipsToReroll={pipsToReroll}
+        pipsToRerollChangeHandler={handlePipsToRerollChange}
+      />
       <Row>
-        <Col>
-          <ResultTable
-            isExactResult={true}
-            displayMin={1}
-            displayMax={3}
-            diceCounts={rolledDiceCounts}
-            pipsToReroll={pipsToReroll}
-            pipsToRerollChangeHandler={handlePipsToRerollChange}
-            />
-        </Col>
-        <Col>
-          <ResultTable
-            isExactResult={true}
-            displayMin={4}
-            displayMax={6}
-            diceCounts={rolledDiceCounts}
-            pipsToReroll={pipsToReroll}
-            pipsToRerollChangeHandler={handlePipsToRerollChange}
-            />
+        <Col className='d-flex justify-content-center align-items-center'>
+          <Button
+            className="m-2"
+            style={{ width: '200px' }}
+            onClick={handleRerollClick}
+            disabled={pipsToReroll.size === 0}
+          >
+            Reroll
+          </Button>
         </Col>
       </Row>
-      <Row>{pipDisplays}</Row>
-      <Row>
-        <Col style={{textAlign: 'center'}}>
-          <Button className="m-2" style={{width: '200px'}} onClick={handleRerollClick}>Reroll</Button>
-        </Col>
-      </Row>
-      <Row>
+      <Row className='d-flex justify-content-center align-items-center'>
         <a href="https://github.com/KatyAHG/MassDiceRoller">GitHub repo</a>
       </Row>
     </Container>

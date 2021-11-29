@@ -11,6 +11,8 @@ interface Props {
     pipsToRerollChangeHandler?: (pip: number, newValue: boolean) => void,
 }
 
+// the 'isExactResult === true' version of this component was like PipDisplays
+// in that it showed exact count for a pip-count and had a checkbox for reroll
 const ResultTable: React.FC<Props> = (props: Props) => {
   let rows: any[] = [];
   let runningSum = 0;
