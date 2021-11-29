@@ -74,7 +74,7 @@ export default function App() {
   };
 
   return (
-    <Container className="p-3" style={{width: '450px'}}>
+    <Container className="p-3" style={{width: '300px'}}>
       <Row>
         <Col className='d-flex justify-content-center'>
           <h1 className="header">MassDiceRoller</h1>
