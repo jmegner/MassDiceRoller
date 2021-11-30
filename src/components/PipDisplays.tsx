@@ -66,10 +66,10 @@ const PipDisplays: React.FC<Props> = (props: Props) => {
     let pipRow: JSX.Element[] = [];
 
     for(let col = 0; col < 3; col++) {
-      pipRow.push(<Col className="my-2">{pipDisplays[3 * row + col]}</Col>)
+      pipRow.push(<Col key={'col' + col} className="my-2">{pipDisplays[3 * row + col]}</Col>)
     }
 
-    pipStuff.push(<Row className="d-flex justify-content-center">{pipRow}</Row>)
+    pipStuff.push(<Row key={'row' + row} className="d-flex justify-content-center">{pipRow}</Row>)
   }
 
   return <Container style={{width: '250px'}}>{pipStuff}</Container>
