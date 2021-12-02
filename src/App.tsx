@@ -3,10 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { MersenneTwister19937, Random } from 'random-js';
+import _ from 'lodash';
+
+import Die from './Die';
 import ResultTable from './components/ResultTable';
 import PipDisplays from './components/PipDisplays';
-import { MersenneTwister19937, Random } from 'random-js';
-import * as _ from 'lodash';
 
 export default function App() {
   const [rng] = useState(new Random(MersenneTwister19937.autoSeed()));

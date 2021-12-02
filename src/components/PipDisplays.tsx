@@ -27,7 +27,7 @@ const PipDisplay: React.FC<PipDisplayProps> = (props: PipDisplayProps) => {
         </Col>
       </Row>
       <Row>
-        <Col className='d-flex justify-content-center align-items-center'>
+        <Col data-testid={'pip' + props.pip + 'Count'} className='d-flex justify-content-center align-items-center'>
           {props.count}
         </Col>
       </Row>
