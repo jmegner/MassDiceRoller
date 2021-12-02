@@ -1,7 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import ReactDom, { unmountComponentAtNode } from 'react-dom'; // don't use render from this guy
-import TestUtil, { act } from 'react-dom/test-utils';
+//import ReactDom, { unmountComponentAtNode } from 'react-dom'; // don't use render from this guy
 import TestLib, { fireEvent, render } from '@testing-library/react';
 
 import App from './App';
@@ -50,7 +48,7 @@ it('roll fills in stat table', () => {
     const statVal = parseInt(statElem.textContent as string);
     pipToStat.set(pip, statVal);
 
-    if(pip == Die.PipMin) {
+    if(pip === Die.PipMin) {
       expect(statVal).toBe(totalDice);
     }
     else {

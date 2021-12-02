@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 import { MersenneTwister19937, Random } from 'random-js';
 import _ from 'lodash';
 
-import Die from './Die';
 import ResultTable from './components/ResultTable';
 import PipDisplays from './components/PipDisplays';
 
