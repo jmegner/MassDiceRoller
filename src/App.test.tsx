@@ -108,3 +108,7 @@ it('reroll works', () => {
   let countSum = _.sum(Array.from(rerollResults.values()))
   expect(countSum).toBe(totalDice);
 });
+
+it('deliberately failing test to verify test github action', () => {
+  expect(1).toBe(0);
+});
