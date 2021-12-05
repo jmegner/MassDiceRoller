@@ -1,22 +1,21 @@
 import React from 'react';
-//import ReactDom, { unmountComponentAtNode } from 'react-dom'; // don't use render from this guy
-import TestLib, { fireEvent, render } from '@testing-library/react';
+import * as Test from '@testing-library/react';
 
 import App from './App';
 import Die from './Die';
 import _ from 'lodash';
 
-type RenderResult = TestLib.RenderResult<typeof TestLib.queries, HTMLElement>;
+type RenderResult = Test.RenderResult<typeof Test.queries, HTMLElement>;
 
 function rollDice(
   app: RenderResult,
   numDice: number)
 {
   let qtyField = app.getByPlaceholderText('Dice Quantity');
-  fireEvent.change(qtyField, {target: {value: numDice}});
+  Test.fireEvent.change(qtyField, {target: {value: numDice}});
 
   let rollBtn = app.getByText('Roll');
-  fireEvent.click(rollBtn);
+  Test.fireEvent.click(rollBtn);
 }
 
 function getRollResults(app: RenderResult) : Map<number,number> {
@@ -32,11 +31,11 @@ function getRollResults(app: RenderResult) : Map<number,number> {
 }
 
 it('app renders without crashing', () => {
-  render(<App />);
+  Test.render(<App />);
 });
 
 it('roll fills in stat table', () => {
-  let app = render(<App />);
+  let app = Test.render(<App />);
   const totalDice = 500;
 
   rollDice(app, totalDice);
@@ -58,7 +57,7 @@ it('roll fills in stat table', () => {
 });
 
 it('roll fills in pip displays', () => {
-  let app = render(<App />);
+  let app = Test.render(<App />);
   const totalDice = 501;
 
   rollDice(app, totalDice);
@@ -74,7 +73,7 @@ it('roll fills in pip displays', () => {
 });
 
 it('reroll works', () => {
-  let app = render(<App />);
+  let app = Test.render(<App />);
   const totalDice = 503;
 
   rollDice(app, totalDice);
@@ -84,11 +83,11 @@ it('reroll works', () => {
 
   pipsToReroll.forEach(pip => {
     const rerollCheckbox = app.container.querySelector('#reroll' + pip) as Element;
-    fireEvent.click(rerollCheckbox);
+    Test.fireEvent.click(rerollCheckbox);
   });
 
   let rerollBtn = app.getByText('Reroll');
-  fireEvent.click(rerollBtn);
+  Test.fireEvent.click(rerollBtn);
 
   let rerollResults = getRollResults(app);
 
