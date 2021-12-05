@@ -1,7 +1,9 @@
 # MassDiceRoller
-Client-side-only React-based learning project to make web page that simulates
-rolling many dice and some other convenience features related to games like
-Warhammer.
+Project to learn client-side-only React web app stuff and do it properly
+(including CI/CD, testing, etc). The web app simulates rolling many dice and
+makes it easy to reroll certain outcomes.  This is basically a web-ification of
+the 
+[Warhammer Dice Android app](https://play.google.com/store/apps/details?id=com.xamarin.WH_Dices).
 
 App is live at
 [https://jmegner.github.io/MassDiceRoller/](https://jmegner.github.io/MassDiceRoller/).
