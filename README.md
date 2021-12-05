@@ -4,7 +4,7 @@ rolling many dice and some other convenience features related to games like
 Warhammer.
 
 App is live at
-[https://katyahg.github.io/MassDiceRoller/](https://katyahg.github.io/MassDiceRoller/).
+[https://jmegner.github.io/MassDiceRoller/](https://jmegner.github.io/MassDiceRoller/).
 
 Notable technologies/libs/tools/whatever used... 
 * [TypeScript](https://www.typescriptlang.org/)

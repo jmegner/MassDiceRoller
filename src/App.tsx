@@ -113,7 +113,7 @@ export default function App() {
         </Col>
       </Row>
       <Row className='d-flex justify-content-center align-items-center'>
-        <a href="https://github.com/KatyAHG/MassDiceRoller">GitHub repo</a>
+        <a href="https://github.com/jmegner/MassDiceRoller">GitHub repo</a>
       </Row>
     </Container>
   );
