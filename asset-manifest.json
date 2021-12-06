@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/MassDiceRoller/static/js/main.0661f0a8.chunk.js",
+    "main.js.map": "/MassDiceRoller/static/js/main.0661f0a8.chunk.js.map",
+    "runtime-main.js": "/MassDiceRoller/static/js/runtime-main.66d5bfd1.js",
+    "runtime-main.js.map": "/MassDiceRoller/static/js/runtime-main.66d5bfd1.js.map",
+    "static/css/2.e0a5d12c.chunk.css": "/MassDiceRoller/static/css/2.e0a5d12c.chunk.css",
+    "static/js/2.09d5026a.chunk.js": "/MassDiceRoller/static/js/2.09d5026a.chunk.js",
+    "static/js/2.09d5026a.chunk.js.map": "/MassDiceRoller/static/js/2.09d5026a.chunk.js.map",
+    "index.html": "/MassDiceRoller/index.html",
+    "static/css/2.e0a5d12c.chunk.css.map": "/MassDiceRoller/static/css/2.e0a5d12c.chunk.css.map",
+    "static/js/2.09d5026a.chunk.js.LICENSE.txt": "/MassDiceRoller/static/js/2.09d5026a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66d5bfd1.js",
+    "static/css/2.e0a5d12c.chunk.css",
+    "static/js/2.09d5026a.chunk.js",
+    "static/js/main.0661f0a8.chunk.js"
+  ]
+}
